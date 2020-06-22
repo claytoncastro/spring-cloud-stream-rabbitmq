@@ -21,7 +21,7 @@ public class ClientResource {
     private final ClientService service;
 
     @PostMapping
-    public ResponseEntity<Void> save(@RequestBody Client client) {
+    public ResponseEntity<Void> save(@RequestBody Client client) throws Exception {
         service.save(client);
         URI uri = ServletUriComponentsBuilder
                 .fromCurrentRequest()

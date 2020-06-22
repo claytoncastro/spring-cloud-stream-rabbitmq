@@ -4,6 +4,6 @@ import com.codjavando.project.api.model.Client;
 
 public interface ClientService {
 
-    Client save(Client client);
+    Client save(Client client) throws Exception;
 
 }
