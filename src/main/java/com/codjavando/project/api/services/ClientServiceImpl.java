@@ -2,7 +2,7 @@ package com.codjavando.project.api.services;
 
 import com.codjavando.project.api.model.Client;
 import com.codjavando.project.api.repositories.ClientRepository;
-import lombok.RequiredArgsConstructor;
+import com.codjavando.project.api.services.output.AbstractOutput;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,10 +10,12 @@ import java.time.LocalDate;
 import java.util.stream.Collectors;
 
 @Service
-@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class ClientServiceImpl implements ClientService {
 
-    private final ClientRepository repository;
+    @Autowired
+    private ClientRepository repository;
+    @Autowired
+    private AbstractOutput output;
 
     @Override
     public Client save(Client client) throws Exception {
@@ -21,7 +23,7 @@ public class ClientServiceImpl implements ClientService {
             throw new Exception("The email " + client.getEmail() +
                     " is already registered. Please register an email not yet registered!");
         }
-
+        output.publishEvent(client);
         client.setDate(LocalDate.now());
         return repository.save(client);
     }

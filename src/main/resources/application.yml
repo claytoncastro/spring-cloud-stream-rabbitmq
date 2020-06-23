@@ -1,6 +1,6 @@
 #PORT
 server:
-  port: 8090
+  port: 8081
 
 spring:
   application:
@@ -20,3 +20,14 @@ spring:
     username: root
     password: root
 
+  #RabbitMQ AND QUEUE CONFIGURATION
+  activemq:
+    broker-url: tcp://127.0.0.1:5672
+  rabbitmq:
+    username: guest
+    password: guest
+  cloud:
+    stream:
+      bindings:
+        output:
+          destination: codjavando-stream
