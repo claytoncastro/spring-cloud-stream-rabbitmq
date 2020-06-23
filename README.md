@@ -35,9 +35,9 @@ https://hub.docker.com/editions/community/docker-ce-desktop-windows
         ~~~
     * Now, download the RabbitMQ image:
         ~~~
-        VERSAO=3-management
-        export VERSAO
-        docker pull rabbitmq:$VERSAO
+        VERSION=3-management
+        export VERSION
+        docker pull rabbitmq:$VERSION
         ~~~
     * List the images using the following command:
          ~~~
@@ -51,7 +51,7 @@ https://hub.docker.com/editions/community/docker-ce-desktop-windows
           --restart=always \
           --hostname rabbitmq-master \
           -v /docker/rabbitmq/data:/var/lib/rabbitmq \
-          rabbitmq:$VERSAO
+          rabbitmq:$VERSION
          ~~~
     * After running RabbitMQ, you can see it accessing the URL:
         ~~~
