@@ -5,6 +5,9 @@ The objective of this project is to show the use of the following technologies:
 * Spring Cloud Stream
 * RabbitMQ
 
+### Flow
+![spring-cloud-stream-rabbitmq-flow](util/spring-cloud-stream-publish-image/spring-cloud-stream-rabbitmq.png)
+
 ### Environment
 * Java 8
 * Maven 3.5.0
